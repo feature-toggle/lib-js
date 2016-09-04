@@ -1,2 +1,3 @@
-/feature-toggle-lib-js/nbproject/private/
-/nbproject/private/
+nbproject/
+node_modules/
+.idea/

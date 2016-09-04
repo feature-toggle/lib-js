@@ -1,0 +1,25 @@
+{
+  "name": "featuretoggle-lib-js",
+  "version": "1.0.0",
+  "authors": [
+    "Feature Toggle <info@featuretoggle.com>"
+  ],
+  "description": "Javascript Library to use Feature Toggle services",
+  "main": "featuretoggle.js",
+  "title": "Feature Toggle Library",
+  "keywords": [
+    "feature",
+    "toggle"
+  ],
+  "author": "Feature Toggle <info@featuretoggle.com>",
+  "contributors": [],
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-rename": "~1.2.0",
+    "gulp-uglify": "~0.2.1",
+    "karma": "~0.10.2",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-jasmine": "~0.1.3"
+  }
+}

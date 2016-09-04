@@ -1,22 +1,20 @@
 {
-  "name": "feature-toggle-lib-js",
+  "name": "featuretoggle-lib-js",
+  "version": "1.0.0",
   "authors": [
-    "Feature Toggle <info@feature-toggle.com>"
+    "Feature Toggle <info@featuretoggle.com>"
   ],
   "description": "Javascript Library to use Feature Toggle services",
-  "main": "feature-toggle.js",
+  "main": "featuretoggle.js",
   "moduleType": [],
   "keywords": [
     "feature",
     "toggle"
   ],
   "license": "MIT",
-  "homepage": "http://www.feature-toggle.com",
+  "homepage": "http://www.featuretoggle.com",
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    ".jshintrc",
+    "**/.*"
   ]
 }
