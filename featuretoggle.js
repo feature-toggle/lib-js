@@ -38,11 +38,11 @@ function FeatureToggle(customerKey, environmentKey) {
         },
         FeatureToggle.prototype.getFeatures = function (callback) {
             this.apiRequest('/features', function (res) {
-                res.success ? callback(null, res.features) : callback(res.message, null)
+                res.features !== undefined ? callback(null, res.features) : callback(res.message, null)
             });
         },
         FeatureToggle.prototype.isEnabled = function (feature, callback) {
             this.apiRequest('/features/' + feature, function (res) {
-                res.success ? callback(null, res.enabled) : callback(res.message, null)
+                res.enabled !== undefined ? callback(null, res.enabled) : callback(res.message, null)
             });
         };
