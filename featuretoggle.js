@@ -1,7 +1,7 @@
 function FeatureToggle(customerKey, environmentKey) {
     this.customerKey = customerKey,
             this.environmentKey = environmentKey,
-            this.api = 'https://www.featuretoggle.com/api'
+            this.api = 'http://127.0.0.1:8000'
 }
 !function () {
     'use strict'
