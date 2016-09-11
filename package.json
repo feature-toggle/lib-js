@@ -2,11 +2,11 @@
   "name": "featuretoggle-lib-js",
   "version": "1.0.0",
   "description": "Javascript Library to use Feature Toggle services",
-  "title": "Feature Toggle Library",
+  "title": "Feature Toggle Javascript Library",
   "main": "./src",
   "repository": {
     "type": "git",
-    "url": "https://github.com/featuretoggle/featuretoggle-lib-js.git"
+    "url": "https://github.com/featuretoggle/lib-js.git"
   },
   "keywords": [
     "featuretoggle",
@@ -14,14 +14,15 @@
     "feature",
     "toggle",
     "client",
+    "feature toggle",
     "feature flag"
   ],
   "author": "Feature Toggle <info@featuretoggle.com> (https://featuretoggle.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/featuretoggle/featuretoggle-lib-js/issues"
+    "url": "https://github.com/featuretoggle/lib-js/issues"
   },
-  "homepage": "https://github.com/featuretoggle/feturetoggle-js",
+  "homepage": "https://github.com/featuretoggle/lib-js",
   "dependencies": {},
   "devDependencies": {
     "del": "^2.2.0",
