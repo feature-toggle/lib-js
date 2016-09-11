@@ -37,7 +37,7 @@ var FeatureToggle;
 
     FeatureToggle.prototype.apiRequest = function (endpoint, callback) {
         var request = new XMLHttpRequest();
-        request.open('GET', this.api + endpoint);
+        request.open('GET', this.options.api + endpoint);
         request.setRequestHeader('Authorization', this.options.auth);
         request.setRequestHeader('Content-Type', 'application/json');
         request.setRequestHeader('X-Accept-Version', this.options.version);
