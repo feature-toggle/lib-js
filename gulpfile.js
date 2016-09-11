@@ -1,21 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 var gulp = require('gulp'),
+    rename = require('gulp-rename'),
+    concat = require('gulp-concat'),
+    notify = require('gulp-notify'),
+    jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
-    rename = require('gulp-rename');
+    del = require('del');
 
 gulp.task('scripts', function() {
-    return gulp.src('featuretoggle.js')
-        .pipe(rename('featuretoggle.min.js'))
-        .pipe(uglify({
-            preserveComments: 'some',
-            outSourceMap: true
-        }))
-        .pipe(gulp.dest('.'));
+    return gulp.src('src/**/*.js')
+        .pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter('default'))
+        .pipe(concat('featuretoggle.js'))
+        .pipe(gulp.dest('dist'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist'))
+        .pipe(notify({message: 'Scripts task complete' }));
 });
 
-gulp.task('default', ['scripts']);
+gulp.task('clean', function() {
+    return del(['dist']);
+});
+
+gulp.task('default', ['clean'], function() {
+    gulp.start('scripts');
+});
