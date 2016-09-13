@@ -3,11 +3,13 @@
 }());
 
 function FeatureToggleCache(options) {
+    var storage;
+
     if(options.cache_storage === 'session') {
-        var storage = sessionStorage;
+        storage = sessionStorage;
     }
     else {
-        var storage = localStorage;
+        storage = localStorage;
     }
     this.manager = typeof storage !== 'undefined' ? storage : null;
     this.keys = {};
@@ -26,13 +28,11 @@ FeatureToggleCache.prototype.get = function(key) {
         if(typeof this.keys[key] !== 'undefined') {
             // Check if key has expired
             if(this.keys[key] < Math.floor(Date.now() / 1000)) {
-                var value = this.manager.getItem(key);
-                return JSON.parse(value);
+                return JSON.parse(this.manager.getItem(key));
             }
         }
         else if(key === this.options.cache_keys_name) {
-            var value = this.manager.getItem(key);
-            return JSON.parse(value);
+            return JSON.parse(this.manager.getItem(key));
         }
     }
 
@@ -51,7 +51,7 @@ FeatureToggleCache.prototype.set = function(key, value) {
         if(JSON.stringify(cachedValue) !== JSON.stringify(value) ) {
             // Add to local storage
             this.manager.setItem(key, JSON.stringify(value));
-            var persisted = this.manager.getItem(key); //
+            this.manager.getItem(key);
 
             // Update keys list
             if (key !== this.options.cache_keys_name) {
@@ -169,10 +169,10 @@ FeatureToggle.prototype.getFeatures = function (callback) {
             //return res.features !== undefined ? callback(null, res.features) : callback(res.message, null);
             if (typeof res.features !== 'undefined') {
                 self.cache.set('features', res.features);
-                callback(null, res.features)
+                callback(null, res.features);
             }
             else {
-                callback(res.message, null)
+                callback(res.message, null);
             }
         });
     }
@@ -184,10 +184,10 @@ FeatureToggle.prototype.isEnabled = function (feature, callback) {
         //return res.enabled !== undefined ? callback(null, res.enabled) : callback(res.message, null);
         if(typeof res.enabled !== 'undefined') {
             self.cache.set(feature, res.enabled);
-            callback(null, res.enabled)
+            callback(null, res.enabled);
         }
         else {
-            callback(res.message, null)
+            callback(res.message, null);
         }
     });
 };
